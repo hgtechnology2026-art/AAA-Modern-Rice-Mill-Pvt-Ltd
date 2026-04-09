@@ -1,0 +1,96 @@
+import directorImg from "@/assets/Director.webp";
+import logoMonogram from "@/assets/logo-monogram.png";
+import { CheckCircle2 } from "lucide-react";
+import dir from "@/assets/director bg.webp";
+
+const points = [
+  "B.E. Civil Engineering",
+  "MBA - Foreign Trade",
+  "10+ Years International Export & Import",
+  "2nd Generation Rice Manufacturer",
+];
+
+const DirectorSection = () => (
+  <section className="w-full flex justify-center bg-[#5B7953]">
+    
+    {/* MAIN CONTAINER */}
+    <div
+      className="relative w-full max-w-[1441px] h-[505px] overflow-hidden"
+      style={{
+        backgroundImage: `url(${dir})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+
+      {/* IMAGE (FIXED POSITION RESPONSIVE) */}
+      <div className="absolute inset-0">
+        <img
+          src={directorImg}
+          alt="Director"
+          className="
+            absolute top-1/2 
+            left-[60%] md:left-[4%] lg:left-[2%] xl:left-[24%]
+            -translate-x-1/2 -translate-y-1/2
+            max-w-[706px] w-full h-auto object-contain
+            z-[5]
+          "
+        />
+      </div>
+
+      {/* RIGHT CONTENT */}
+      <div className="relative z-10 h-full flex items-start mt-[20px] justify-end px-6 md:px-10">
+        
+        <div className="max-w-[620px] text-white">
+
+          {/* NAME */}
+          <h3 className="font-heading text-[32px] font-bold text-[#f0b23d] leading-none">
+            Anvardeen
+          </h3>
+
+          <p className="font-body mt-1 text-[14px] text-white/90">
+            Managing Director
+          </p>
+
+          <div className="mt-3 h-[2px] w-[80%] bg-white/40" />
+
+          {/* DESCRIPTION */}
+          <p className="mt-4 text-[16px] font-body leading-[30px] text-white/90">
+            Anvardeen is a second-generation rice manufacturer who carries forward the legacy
+            established in 1985. With deep technical expertise in rice production and extensive
+            experience in global commodity trade, he leads A.A.A Modern Rice Mill Pvt Ltd with a
+            commitment to quality, transparency and long-term international partnerships.
+          </p>
+
+          <ul className="mt-5 space-y-3 text-[14px] sm:text-[15px]">
+            {points.map((point) => (
+              <li key={point} className="flex items-start gap-3">
+                <CheckCircle2 size={18} className="mt-[2px] shrink-0" />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-8 flex items-center justify-start gap-3">
+          <img
+            src={logoMonogram}
+            alt="logo"
+            className="h-[72px] w-[72px] object-contain sm:h-[84px] sm:w-[84px]"
+          />
+
+          <div className="font-body text-white">
+            <p className="text-[18px] font-medium leading-[1.4] sm:text-[20px]">
+              A.A.A Modern
+            </p>
+            <p className="text-[18px] font-medium leading-[1.4] sm:text-[20px]">
+              Rice Mill Pvt Ltd
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+export default DirectorSection;
