@@ -16,17 +16,20 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
       <div className="mx-auto flex max-w-[1500px] items-center justify-between px-4 py-3 sm:px-6 md:px-8 lg:px-10 lg:py-4">
-        <a href="#home" className="flex flex-shrink-0 items-center gap-2 sm:gap-3">
+        <a href="#home" className="flex min-w-0 flex-shrink-0 items-center gap-2 sm:gap-3">
           <img
             src={logo}
             alt="A.A.A Modern Rice Mill"
-            className="h-14 w-14 object-contain sm:h-16 sm:w-16 lg:h-20 lg:w-20"
+            className="h-14 w-14 flex-shrink-0 object-contain sm:h-16 sm:w-16 lg:h-20 lg:w-20"
           />
-          <div className="leading-[1.35] sm:leading-[1.45]">
-            <span className="block font-heading text-[11px] font-semibold text-[#d4a43a] sm:text-[12px] lg:text-[14px]">
+          <div className="whitespace-nowrap leading-[1.35] sm:leading-[1.45]">
+            <span className="inline lg:block font-heading text-[11px] font-semibold text-[#d4a43a] sm:text-[12px] lg:text-[14px]">
               A.A.A Modern
             </span>
-            <span className="block font-heading text-[11px] font-semibold text-[#d4a43a] sm:text-[12px] lg:text-[14px]">
+            <span className="inline lg:hidden font-heading text-[11px] font-semibold text-[#d4a43a] sm:text-[12px]">
+              {" "}Rice Mill Pvt Ltd
+            </span>
+            <span className="hidden lg:block font-heading text-[14px] font-semibold text-[#d4a43a]">
               Rice Mill Pvt Ltd
             </span>
           </div>

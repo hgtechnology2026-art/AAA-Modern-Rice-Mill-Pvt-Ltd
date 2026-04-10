@@ -175,6 +175,56 @@ h1, h2, h3, h4, h5, h6, span {
 .animate-fade {
   animation: fade 0.35s ease;
 }
+
+.reveal-base {
+  opacity: 0;
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-up {
+  transform: translate3d(0, 28px, 0);
+}
+
+.reveal-left {
+  transform: translate3d(-28px, 0, 0);
+}
+
+.reveal-right {
+  transform: translate3d(28px, 0, 0);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes leaf-swing {
+  0% {
+    transform:
+      translate3d(var(--scroll-shift-x, 0px), var(--scroll-shift-y, 0px), 0)
+      rotate(calc(var(--leaf-rotate, 0deg) + var(--scroll-rotate, 0deg) - 4deg));
+  }
+  50% {
+    transform:
+      translate3d(calc(var(--leaf-shift-x, 4px) + var(--scroll-shift-x, 0px)), calc(var(--leaf-shift-y, -6px) + var(--scroll-shift-y, 0px)), 0)
+      rotate(calc(var(--leaf-rotate, 0deg) + var(--scroll-rotate, 0deg) + 4deg));
+  }
+  100% {
+    transform:
+      translate3d(var(--scroll-shift-x, 0px), var(--scroll-shift-y, 0px), 0)
+      rotate(calc(var(--leaf-rotate, 0deg) + var(--scroll-rotate, 0deg) - 4deg));
+  }
+}
+
+.leaf-swing {
+  animation: leaf-swing var(--leaf-duration, 5.8s) ease-in-out infinite;
+  animation-delay: var(--leaf-delay, 0s);
+  transform-origin: 50% 12%;
+  will-change: transform;
+}
   .section-hero { background-color: #fcfffb; }
   .hero-shell {
     background:
@@ -244,6 +294,17 @@ section[id] {
 }
 
 @media (max-width: 767px) {
+  .btn-gold-gradients {
+    background: linear-gradient(
+      90deg,
+      #FFC152 0%,
+      #FFE4B3 50%,
+      #FFC358 100%
+    );
+    color: #2e3d2a;
+    border-color: transparent !important;
+  }
+
   .hero-aura {
     top: 12%;
     height: 240px;
